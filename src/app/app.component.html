@@ -1,0 +1,114 @@
+<a routerLink='/articulos'>Articulos</a>-
+<a routerLink='/clientes'>Clientes</a>
+
+<div>
+<h2>Administracion de articulos</h2>
+<div *ngIf="articulos != null">
+  <table border="1">
+      <tr>
+        <td>id</td> <td>Nombre</td> <td>Departamento</td> <td>Cantidad_Existencias</td> <td>Costo</td> <td>Precio_Venta</td> <td>Descuento</td> <td>Min_en_Inventario</td> </tr>
+      <tr *ngFor="let art of articulos">
+          <td>{{art.id_articulo}}</td>
+          <td>{{art.Nombre}}</td>
+          <td>{{art.Departamento}}</td>
+          <td>{{art.Cantidad_Existencias}}</td>
+          <td>{{art.Costo}}</td>
+          <td>{{art.Precio_Venta}}</td>
+          <td>{{art.Descuento}}</td>
+          <td>{{art.Min_en_Inventario}}</td> 
+      </tr> 
+      <tr>
+        <td><button (click)="seleccionar(art.id_articulo)">Seleccionar</button></td>
+        <td><button (click)="borrar(art.id_articulo)">Borrar? </button></td> 
+        <td><button href="http://localhost/conexion/alta.php" (click)="alta()">Agregar </button></td>
+      </tr>
+  </table>
+<div style="text-align: center">
+  <p>Nombre: <input type="text" [(ngModel)]="art.Nombre"/></p>
+  <p>Departamento: <input type="text" [(ngModel)]="art.Departamento"/></p>
+  <p>Cantidad Existencias: <input type="number" [(ngModel)]="art.Cantidad_Existencias"/></p>
+  <p>Costo: <input type="number" [(ngModel)]="art.Costo"/></p>
+  <p>Precio Venta: <input type="number" [(ngModel)]="art.Precio"/></p>
+  <p>Descuento: <input type="number" [(ngModel)]="art.Descuento"/></p>
+  <p>Minimo en inventario: <input type="number" [(ngModel)]="art.Min_en_Inventario"/></p>
+  <p>Id del Articulo: <input type="number" [(ngModel)]="art.id_articulo"/></p>
+</div>
+
+
+  <!-- <table border="1" *ngIf="cliente != null; else espera">
+    <tr>
+      <td>id_clientes</td> 
+      <td>Nombre</td>
+      <td>Apellido Paterno</td>
+      <td>Apellido Materno</td>
+    </tr>
+    <tr *ngFor="let cli of cliente">
+        <td>{{cli.id_cliente}}</td>
+        <td>{{cli.Nombre}}</td>
+        <td>{{cli.Apellido_P}}</td>
+        <td>{{cli.Apellido_M}}</td>
+    </tr>
+  </table>
+  <p>Fecha de Nacimiento</p>
+
+  <select [(ngModel)]="dia">
+    <option>01</option>
+    <option>02</option>
+    <option>03</option>
+    <option>04</option>
+    <option>05</option>
+    <option>06</option>
+    <option>07</option>
+    <option>08</option>
+    <option>09</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+    <option>13</option>
+    <option>14</option>
+    <option>15</option>
+    <option>16</option>
+    <option>17</option>
+    <option>18</option>
+    <option>19</option>
+    <option>20</option>
+    <option>21</option>
+    <option>22</option>
+    <option>23</option>
+    <option>24</option>
+    <option>25</option>
+    <option>26</option>
+    <option>27</option>
+    <option>28</option>
+    <option>29</option>
+    <option>30</option>
+    <option>31</option>
+  </select>
+  
+  <select [(ngModel)]="mes">
+    <option value="01">Enero</option>
+    <option value="02">Febrero</option>
+    <option value="03">Marzo</option>
+    <option value="04">Abril</option>
+    <option value="05">Mayo</option>
+    <option value="06">Junio</option>
+    <option value="07">Julio</option>
+    <option value="08">Agosto</option>
+    <option value="09">Septiembre</option>
+    <option value="10">Octubre</option>
+    <option value="11">Noviembre</option>
+    <option value="12">Diciembre</option>
+  </select>
+
+<select [(ngModel)]="anio">
+  <option>01</option>
+  <option>02</option>
+  <option>03</option>
+  <option>04</option>
+  <option>05</option>
+  <option>06</option>
+</select>
+-->
+
+
+<router-outlet></router-outlet> 

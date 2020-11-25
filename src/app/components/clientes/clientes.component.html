@@ -1,0 +1,17 @@
+<div>
+    <table border="1" *ngIf="cliente != null; else espera">
+        <tr>
+          <td>id_clientes</td> 
+          <td>Nombre</td>
+          <td>Apellido Paterno</td>
+          <td>Apellido Materno</td>
+        </tr>
+        <tr *ngFor="let cli of cliente">
+            <td>{{cli.id_cliente}}</td>
+            <td>{{cli.Nombre}}</td>
+            <td>{{cli.Apellido_P}}</td>
+            <td>{{cli.Apellido_M}}</td>
+        </tr>
+      </table>
+    </div>
+    <ng-template #espera>Esperando datos...</ng-template>

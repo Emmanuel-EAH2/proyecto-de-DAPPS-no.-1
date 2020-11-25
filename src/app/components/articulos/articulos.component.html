@@ -1,0 +1,17 @@
+<div *ngIf="articulos!=null; else espera">
+    <table border="1">
+        <tr>
+          <td>id</td> <td>Nombre</td> <td>Departamento</td> <td>Cantidad_Existencias</td> <td>Costo</td> <td>Precio_Venta</td> <td>Descuento</td> <td>Min_en_Inventario</td> </tr>
+        <tr *ngFor="let art of articulos">
+            <td>{{art.id_artculo}}</td>
+            <td>{{art.Nombre}}</td>
+            <td>{{art.Departamento}}</td>
+            <td>{{art.Cantidad_Existencias}}</td>
+            <td>{{art.Costo}}</td>
+            <td>{{art.Precio_Venta}}</td>
+            <td>{{art.Descuento}}</td>
+            <td>{{art.Min_en_Inventario}}</td>
+        </tr>
+    </table>
+    </div>
+    <ng-template #espera>Esperando datos...</ng-template>
